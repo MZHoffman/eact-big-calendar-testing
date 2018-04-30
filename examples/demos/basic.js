@@ -7,7 +7,7 @@ let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k])
 let Basic = () => (
   <BigCalendar
     events={events}
-    views={allViews}
+    view="day"
     step={60}
     showMultiDayTimes
     defaultDate={new Date(2015, 3, 1)}

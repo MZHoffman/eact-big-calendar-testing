@@ -58,9 +58,19 @@ class Dnd extends React.Component {
         events={this.state.events}
         onEventDrop={this.moveEvent}
         resizable
+        views={['day', 'agenda']}
+        scrollToTime={new Date(1970, 1, 1, 6)}
         onEventResize={this.resizeEvent}
-        defaultView="week"
+        defaultView="day"
         defaultDate={new Date(2015, 3, 12)}
+        onSelectEvent={event => alert(event.title)}
+        onSelectSlot={slotInfo =>
+          alert(
+            `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +
+              `\nend: ${slotInfo.end.toLocaleString()}` +
+              `\naction: ${slotInfo.action}`
+          )
+        }
       />
     )
   }
